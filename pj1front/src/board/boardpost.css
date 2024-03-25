@@ -1,0 +1,26 @@
+/* boardpost.css */
+
+/* 입력란의 크기를 조절합니다 */
+.input-field {
+  width: 300px; /* 원하는 너비로 조정하세요 */
+  padding: 10px; /* 내부 여백을 추가하여 요소의 크기를 늘립니다 */
+  font-size: 16px; /* 글꼴 크기를 설정합니다 */
+  border: 1px solid #ccc; /* 테두리를 추가합니다 */
+  border-radius: 5px; /* 테두리를 둥글게 만듭니다 */
+  margin-bottom: 10px; /* 하단 여백을 추가합니다 */
+}
+
+/* 버튼의 스타일을 조정합니다 */
+.button {
+  padding: 10px 20px; /* 내부 여백을 추가하여 버튼을 크게 만듭니다 */
+  font-size: 16px; /* 글꼴 크기를 설정합니다 */
+  border: none; /* 테두리를 제거합니다 */
+  background-color: #007bff; /* 배경색을 설정합니다 */
+  color: #fff; /* 글자색을 설정합니다 */
+  border-radius: 5px; /* 테두리를 둥글게 만듭니다 */
+  cursor: pointer; /* 커서 모양을 포인터로 변경합니다 */
+}
+
+.button:hover {
+  background-color: #0056b3; /* 마우스 오버시 배경색을 변경합니다 */
+}

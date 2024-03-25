@@ -1,0 +1,33 @@
+package com.example.demo.entity;
+
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "comment")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class commentEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "comment_id")
+    private Long commentId;
+
+    @ManyToOne
+    @JoinColumn(name = "board_no", nullable = false)
+    private Board board;
+
+    @Column(name = "name", nullable = false, length = 50)
+    private String name;
+
+    @Column(name = "content", nullable = false, columnDefinition = "TEXT")
+    private String content;
+
+    @Column(name = "regdate", nullable = false)
+    private LocalDateTime regdate;
+
+    // getters and setters
+}

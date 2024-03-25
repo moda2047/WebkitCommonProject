@@ -1,0 +1,64 @@
+.banner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image-container {
+  position: relative;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.banner-image {
+  max-width: 1000px;
+  height: 300px;
+  max-height: 300px; /* 이미지 최대 높이 설정 */
+  object-fit: cover; /* 이미지를 부모 요소에 맞게 조정 */
+  border: 1px solid black;
+}
+
+.banner-buttons {
+  margin-top: 10px;
+}
+
+.banner-button {
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
+.banner-button.active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.prev-button,
+.next-button {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.prev-button {
+  margin-right: 10px;
+}
+
+.next-button {
+  margin-left: 10px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}

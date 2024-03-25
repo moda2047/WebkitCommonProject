@@ -1,0 +1,30 @@
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.text-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* 배경색과 투명도 조절 */
+  opacity: 1; /* 기본적으로 보임 */
+  transform: translateY(0); /* 기본적으로 이동하지 않음 */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* 애니메이션 효과 추가 */
+}
+
+.text-animation:hover {
+  opacity: 0; /* 호버 시에 숨김 */
+  transform: translateY(20px); /* 호버 시에 아래로 이동 */
+}

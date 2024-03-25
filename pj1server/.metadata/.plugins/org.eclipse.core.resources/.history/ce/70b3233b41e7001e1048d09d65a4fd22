@@ -1,0 +1,58 @@
+package com.example.demo;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.boardEntity;
+import com.example.demo.repository.boardRepository;
+
+@RestController
+@RequestMapping("/board")
+public class boardController {
+	@Autowired
+    private boardRepository boardRepository;
+
+    // Create
+    @PostMapping
+    public boardEntity create(@RequestBody boardEntity board) {
+        return boardRepository.save(board);
+    }
+
+    // Read (All)
+    @GetMapping
+    public List<boardEntity> getAll() {
+        return boardRepository.findAll();
+    }
+
+    // Read (Single)
+    @GetMapping("/{id}")
+    public boardEntity get(@PathVariable int id) {
+        return boardRepository.findById(id).orElse(null);
+    }
+
+    // Update
+    @PutMapping("/{id}")
+    public boardEntity update(@PathVariable int id, @RequestBody boardEntity board) {
+    	boardEntity existingboard = boardRepository.findById(id).orElse(null);
+        if (existingboard != null) {
+        	
+            return boardRepository.save(existingboard);
+        }
+        return null;
+    }
+
+    // Delete
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable int id) {
+    	boardRepository.deleteById(id);
+    }
+}

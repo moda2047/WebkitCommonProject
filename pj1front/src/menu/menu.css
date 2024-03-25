@@ -1,0 +1,90 @@
+.mainMenu .a li,
+.mainMenu .b li,
+.mainMenu .a,
+.mainMenu .b {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 메뉴 컨테이너를 가운데 정렬 */
+.mainMenu {
+  display: flex;
+  justify-content: center;
+}
+.mainMenu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff; /* 고정된 메뉴의 배경색 */
+  z-index: 1000; /* 다른 요소 위에 메뉴가 표시되도록 설정 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+}
+/* 가로로 나열하기 */
+.mainMenu .a {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 메뉴 아이템 스타일링 */
+.mainMenu .a li {
+  margin-right: 200px; /* 각 메뉴 아이템 간격 조정 */
+  position: relative;
+}
+
+/* 하위 메뉴 숨기기 */
+.mainMenu .b {
+  display: none;
+  position: relative; /* 절대 위치에서 상대 위치로 변경 */
+  background-color: #fff; /* 하위 메뉴 배경색 */
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+}
+
+/* 부모 li에 hover 했을 때 하위 메뉴 표시 */
+.mainMenu .a li:hover .b {
+  display: block;
+}
+/* 하위 메뉴 아이템 스타일링 */
+.mainMenu .b li {
+  font-size: 16px; /* 아이템 텍스트 크기 */
+  margin-bottom: 8px; /* 아이템 간격 조정 */
+}
+
+.at-open-menu .line {
+  width: 30px;
+  height: 2px;
+  background: #333333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.menuBox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px; /* 원하는 너비 조정 */
+  height: 100vh; /* 뷰포트 높이에 맞게 조정 */
+  background-color: #ffffff;
+  z-index: 999; /* 다른 요소 위에 메뉴가 표시되도록 설정 */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+  overflow-y: auto; /* 내용이 넘칠 경우 스크롤바 추가 */
+  display: none; /* 초기에는 숨겨둡니다. */
+}
+
+.menuBox.active {
+  display: block; /* active 클래스가 적용되면 보이도록 합니다. */
+}
+
+.menuBox ul {
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+}
+
+.menuBox ul li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
